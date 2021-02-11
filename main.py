@@ -1,28 +1,20 @@
 import pygame
 import random
-
-"""
-10 x 20 square grid
-shapes: S, Z, I, O, J, L, T
-represented in order by 0 - 6
-"""
-
+#imports
 pygame.font.init()
-
-# GLOBALS VARS
+#init
 s_width = 800
 s_height = 700
-play_width = 300  # meaning 300 // 10 = 30 width per block
-play_height = 600  # meaning 600 // 20 = 20 height per blo ck
+play_width = 300 
+play_height = 600
 block_size = 30
-
+#gloabals
 top_left_x = (s_width - play_width) // 2
 top_left_y = s_height - play_height
 
 
-# SHAPE FORMATS
-
-S = [['.....',
+#shapes
+A = [['.....',
       '.....',
       '..00.',
       '.00..',
@@ -33,7 +25,7 @@ S = [['.....',
       '...0.',
       '.....']]
 
-Z = [['.....',
+V = [['.....',
       '.....',
       '.00..',
       '..00.',
@@ -44,24 +36,24 @@ Z = [['.....',
       '.0...',
       '.....']]
 
-I = [['..0..',
+C = [['..0..',
       '..0..',
       '..0..',
       '..0..',
       '.....'],
      ['.....',
-      '0000.',
+      '000.',
       '.....',
       '.....',
       '.....']]
 
 O = [['.....',
       '.....',
-      '.00..',
+      '.000..',
       '.00..',
       '.....']]
 
-J = [['.....',
+D = [['.....',
       '.0...',
       '.000.',
       '.....',
@@ -82,7 +74,7 @@ J = [['.....',
       '.00..',
       '.....']]
 
-L = [['.....',
+E = [['.....',
       '...0.',
       '.000.',
       '.....',
@@ -103,7 +95,7 @@ L = [['.....',
       '..0..',
       '.....']]
 
-T = [['.....',
+R = [['.....',
       '..0..',
       '.000.',
       '.....',
@@ -124,10 +116,8 @@ T = [['.....',
       '..0..',
       '.....']]
 
-shapes = [S, Z, I, O, J, L, T]
+shapes = [A,V,C,O,D,E,R]
 shape_colors = [(0, 255, 0), (255, 0, 0), (0, 255, 255), (255, 255, 0), (255, 165, 0), (0, 0, 255), (128, 0, 128)]
-# index 0 - 6 represent shape
-
 
 class Piece(object):
     rows = 20  # y
